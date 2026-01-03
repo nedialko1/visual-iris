@@ -9,6 +9,7 @@ The repo is organized in the following way:
 the *Iris Flowers* classifier MLP network model. This baseline model is then examined under the magnifying glass of
 *two* possible approaches toward the model's better understanding and further refinement.   
 These approaches have dedicated subfolders as follows:
+<br>
 Note: Representative figure examples provide a visual intuition as to what to expect from these approaches.
 
 ---
