@@ -14,6 +14,7 @@ Note: Representative figure examples provide a visual intuition as to what to ex
 ---
 
 * da_Visual_Iris
+<br>
 ![Setosa_Baseline.PNG](./images/Setosa_Baseline.PNG)
 
 This approach can be called "Open the Black Box". It relies on intuitive visual unfolding of a given connectionist model.
@@ -48,7 +49,8 @@ for any of the NN model's layers. (Do play with these sliders :)
 
 ---
 
-* Statistical_Iris
+* Statistical_Iris 
+<br>
   ![stats_iris_2D.png](./images/stats_iris_2D.png)
 
 The relative simplicity of the baseline *Iris Flowers* classifier MLP network may actually be a bit of an illusion.  
