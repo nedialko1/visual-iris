@@ -11,6 +11,8 @@ the *Iris Flowers* classifier MLP network model. This baseline model is then exa
 These approaches have dedicated subfolders as follows:
 Note: Representative figure examples provide a visual intuition as to what to expect from these approaches.
 
+---
+
 * da_Visual_Iris
 ![Setosa_Baseline.PNG](./images/Setosa_Baseline.PNG)
 
