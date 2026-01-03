@@ -49,7 +49,7 @@ for any of the NN model's layers. (Do play with these sliders :)
 ---
 
 * Statistical_Iris
-![stats_iris_2D.png](./images/stats_iris_2D.png)
+  ![stats_iris_2D.png](./images/stats_iris_2D.png)
 
 The relative simplicity of the baseline *Iris Flowers* classifier MLP network may actually be a bit of an illusion.  
 Its 4 - 8 - 9 - 3  MLP model structure still requires more than 150 (!) weight and bias parameters.
