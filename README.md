@@ -4,7 +4,7 @@ A companion set of eyes-centric (visually enriched) python codes toward explaina
 **How to use toward best results**
 
 The repo is organized in the following way:
-* Its root folder contains all you need to get started - e.g. the minimum *requirements* file and a fully functional 
+* Its **root folder** contains all you need to get started - e.g. the minimum *requirements* file and a fully functional 
 *PyTorch* script that implements and then runs (inference, training etc) the well-known **baseline** version of
 the *Iris Flowers* classifier MLP network model. This baseline model is then examined under the magnifying glass of
 *two* possible approaches toward the model's better understanding and further refinement.   
