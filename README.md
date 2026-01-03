@@ -46,6 +46,8 @@ Namely, turn off all model neurons whose activation is below a preset **firing t
 A proof of concept model is presented here in a very visual form - providing the user with sliders to set the firing threshold 
 for any of the NN model's layers. (Do play with these sliders :)
 
+---
+
 * Statistical_Iris
 ![stats_iris_2D.png](./images/stats_iris_2D.png)
 
