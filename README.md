@@ -50,8 +50,8 @@ for any of the NN model's layers. (Do play with these sliders :)
 The relative simplicity of the baseline *Iris Flowers* classifier MLP network may actually be a bit of an illusion.  
 Its 4 - 8 - 9 - 3  MLP model structure still requires more than 150 (!) weight and bias parameters.
 If we compare this to classical statistics methods, we shall see that good old statistics 
-would achieve similar performance in the same 3 classes of iris flowers discrimination using less than 10 (!) parameters 
-- see Principal Component Analysis (PCA), Fisher Linear Discrimination (FLD) etc.
+would achieve similar performance in the same 3 classes of iris flowers discrimination using less than 10 (!) parameters, 
+see Principal Component Analysis (PCA), Fisher Linear Discrimination (FLD) etc.
 Moreover, the optimal values of these about 10 parameters would be available in closed form and not require *any* training whatsoever!
 
 Hence, this second alternative approach focuses on harnessing powerful statistics methods. The latter do not have to be considered 
