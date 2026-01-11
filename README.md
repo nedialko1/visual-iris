@@ -48,8 +48,7 @@ The CUDA version assumed is 12.4.
 
 2. **Dependency Installation:**
 
-```
-Bash
+```bash
 
 pip install -r requirements.txt
 ```
@@ -57,9 +56,6 @@ pip install -r requirements.txt
 ---
 
 # Part 2: Technical Progression & Guidelines
-
-```markdown
----
 
 ## 🟢 Level 1: Baseline Implementation (`/start_here`)
 **"Foundations of the Multi-Layer Perceptron (MLP)."**
