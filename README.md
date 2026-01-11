@@ -141,7 +141,7 @@ This part demonstrates the reduction of model complexity through informed archit
 ## 📈 Summary
 Structural optimization is the intersection of mathematical elegance and computational efficiency. The figures provided here illustrate that explainability is not a byproduct, but a requirement for robust AI design.
 
-* For theoretical depth, refer to: **"Frugal Explainable AI/ML Model Optimization"
+* For theoretical depth, refer to: **"Frugal Explainable AI/ML Model Optimization"**
 --- 
 
 ## 🏛️ Methodological Postscript 
