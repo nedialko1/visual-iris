@@ -115,7 +115,7 @@ An juxtaposition of connectionist learning against classical Principal Component
 
 ---
 
-## 🔴 Level 4: Architectural Optimization
+## 🔴 Level 4: Architectural Optimization (`/Pretrained_Iris`)
 **"Frugality: The 12-Parameter Challenge."**
 
 This part demonstrates the reduction of model complexity through informed architectural design.
@@ -142,7 +142,6 @@ This part demonstrates the reduction of model complexity through informed archit
 Structural optimization is the intersection of mathematical elegance and computational efficiency. The figures provided here illustrate that explainability is not a byproduct, but a requirement for robust AI design.
 
 *For theoretical depth, refer to: **"Frugal Explainable AI/ML Model Optimization"
-
 --- 
 
 ## 🏛️ Methodological Postscript 
