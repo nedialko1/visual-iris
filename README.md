@@ -280,9 +280,9 @@ This part demonstrates the reduction of model complexity through informed archit
 
 ![netron view of baseline MLP](./images/tensors_heatmaps/netron_baseline_MLP.png)
 
-![Baseline MLP Model Drift (Heatmap)](./images/tensors_heatmaps/architecture_drift.png)
+![Model Drift (using Hinton diagrams)](./images/hinton_drift.png)
 
-![Model Drift (using Hinton diagrams)](./images/tensors_heatmaps/hinton_drift.png)
+![Baseline MLP Model Drift (Heatmap)](./images/tensors_heatmaps/architecture_drift.png)
 
 --- 
 
