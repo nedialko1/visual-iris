@@ -1,0 +1,21 @@
+# --- Python Environment ---
+.idea/
+.venv/
+
+__pycache__/
+
+# --- Data & Artifacts ---
+# track the code to GET data (and the precious Artifacts), not the data itself.
+data/*
+!data/.gitkeep
+
+# --- Machine Learning Artifacts ---
+# keep: *.pt
+*.pth
+# keep: *.onnx
+*.weights
+*.log
+
+# --- OS stuff ---
+.DS_Store
+

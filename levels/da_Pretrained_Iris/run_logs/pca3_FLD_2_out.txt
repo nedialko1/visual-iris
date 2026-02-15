@@ -1,0 +1,53 @@
+visual-iris\levels\da_Pretrained_Iris\pca3_FLD.py 
+
+??? [1 0 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2] 
+^^^ [0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1] 
+Accuracy : 114 / 150 -> 76.00%
+Zero-Training Accuracy: 76.00%
+*** iiThisClass.shape = (50,)
+*** iiThisClass.shape = (50,)
+*** iiThisClass.shape = (50,)
+0. <> 
+ [[1. 0. 0.]
+ [1. 0. 0.]
+ [1. 0. 0.]
+ [1. 0. 0.]
+ [1. 0. 0.]] 
+1. <> 
+ [[0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]] 
+2. <> 
+ [[0. 0. 1.]
+ [0. 0. 1.]
+ [0. 0. 1.]
+ [0. 0. 1.]
+ [0. 0. 1.]] 
+*** X.shape = torch.Size([150, 4])
+*** y_test.shape = torch.Size([150, 3])
+*** data.shape = torch.Size([4])
+Zero-Training Testing: We got 114 RIGHT, out of 150!
+Epoch: 0 and loss: 0.5370821356773376
+Epoch: 50 and loss: 0.25816354155540466
+Epoch: 100 and loss: 0.18022148311138153
+Epoch: 150 and loss: 0.13684657216072083
+Epoch: 200 and loss: 0.10781287401914597
+Epoch: 250 and loss: 0.08824282884597778
+Epoch: 300 and loss: 0.07489020377397537
+Epoch: 350 and loss: 0.06550369411706924
+Epoch: 400 and loss: 0.05864689126610756
+Epoch: 450 and loss: 0.05347258225083351
+Epoch: 500 and loss: 0.04949143901467323
+Epoch: 550 and loss: 0.04640522599220276
+Epoch: 600 and loss: 0.044012825936079025
+Epoch: 650 and loss: 0.04216521233320236
+*** Train data loss[700]: 0.04077021777629852
+Training: We got 146 RIGHT, out of 150!
+*** Final achieved loss: 0.04074537754058838 after 700 epochs
+W3 = 
+ [[ 8.929735   -3.5986302  -0.29509103]
+ [-7.319627    2.519389   -5.7821107 ]
+ [-2.0793087   0.8715577   4.996834  ]]
+b3 = [0.03883727 0.9316126  0.14778122]
