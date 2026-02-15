@@ -37,6 +37,7 @@ a Hands-On Introduction**
 
 **  REPO LAYOUT FOR THE QUICK DIVER: **
 
+```
 visual_iris/
 ├── levels/               # The "Article!" Logic (scripts beyond the simplest demos)
 │   ├── start_here        # 'classic' iris MLP (4-8-9-3) architecture using PyTorch.
@@ -64,7 +65,7 @@ visual_iris/
 │   └── test_me_3.py   # Using the da_PWL_tool (*2)
 │
 └── images/            # mostly saved plots (*1)
-
+```
 ---
 
 **How to use toward best results**
@@ -244,15 +245,15 @@ An juxtaposition of connectionist learning against classical Principal Component
 ### 🔵 Level 5: The PWL tool (`/PWL_tool`)
 *The Interactive ReLU Designer in 2D*
 
-* PWL_bounds.py
+* demos/test_me_3.py --> levels/PWL_tool/PWL_bounds.py
 
 ![Toy ReLU Constraints](./images/PWL_Designer/Toy_ReLU_Constraints.png)
 
-* PWL_tool_V2.py
+* levels/PWL_tool/PWL_tool_V2.py
 
-A fully pretrained NN model generated interactively:
+A pretrained NN model fully determined by mathematically precise methods and generated interactively:
 
-![ReLU units fully determined by PCA & FLD](./images/PWL_Designer/PCA_FLD_ReLUs.png)
+![ReLU units by PCA & FLD](./images/PWL_Designer/PCA_FLD_ReLUs.png)
 
 ---
 
