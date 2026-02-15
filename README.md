@@ -62,25 +62,31 @@ visual_iris/
 ├── demos/             # The Impactful Demos (readily runnable scripts)
 │   ├── test_me_1.py   # The baseline iris MLP (4-8-9-3) architecture
 │   ├── test_me_2.py   # The Model Drift Analysis Visualization
-│   └── test_me_3.py   # Using the da_PWL_tool (*2)
+│   └── test_me_3.py   # Using the levels/PWL_tool/PWL_bounds.py (* 2)
 │
-└── images/            # mostly saved plots (*1)
+└── images/            # mostly saved plots (* 1)
 ```
+
+Notes: 
+(* 1) Representative examples and figures provide a visual intuition as to what to expect from these approaches.
+
+(* 2) Amongst other uses, the **demos** folder scripts can be used toward checking the installation and also to introduce some of the tools of interest.
+
 ---
 
 **How to use toward best results**
 
 The repository is organized in the following way:
+
 * Its **root folder** contains all you need to get started - e.g. the minimum *requirements* file 
 
-* Its **root** folder
-and a fully functional 
-*PyTorch* script that implements and then runs (inference, training etc) the well-known **baseline** version of
-the *Iris Flowers* classifier MLP network model. This baseline model is then examined under the magnifying glass of
-progressively more elaborate approaches toward the model's better understanding and further refinement.   
+* The **demos** folder contains fully functional scripts that implement and run 
+(do the inference, training etc) the well-known **baseline** version of
+the *Iris Flowers* classifier MLP *PyTorch* network model. 
+
+* The same model is then examined under the magnifying glass of
+progressively more elaborate approaches toward the model's better understanding and refinement.   
 These approaches have dedicated subfolders as described below.
-<br>
-Note: Representative examples and figures provide a visual intuition as to what to expect from these approaches.
 
 ---
 
@@ -247,7 +253,7 @@ An juxtaposition of connectionist learning against classical Principal Component
 
 * demos/test_me_3.py --> levels/PWL_tool/PWL_bounds.py
 
-![Toy ReLU Constraints](./images/PWL_Designer/Toy_ReLU_Constraints.png)
+![Toy ReLU Constraints](./images/PWL_Designer/Toy_ReLUs_Constraints.png)
 
 * levels/PWL_tool/PWL_tool_V2.py
 
@@ -274,9 +280,9 @@ This part demonstrates the reduction of model complexity through informed archit
 
 ![netron view of baseline MLP](./images/tensors_heatmaps/netron_baseline_MLP.png)
 
-![Baseline MLP Model Drift (Heatmap)](./images/tensors_heatmaps/architecture_drift_1.png)
+![Baseline MLP Model Drift (Heatmap)](./images/tensors_heatmaps/architecture_drift.png)
 
-![Model Drift (using Hinton diagrams)](./images/tensors_heatmaps/architecture_drift.png)
+![Model Drift (using Hinton diagrams)](./images/tensors_heatmaps/hinton_drift.png)
 
 --- 
 
