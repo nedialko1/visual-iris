@@ -143,7 +143,7 @@ Foremost let us have a look at the standard iris data set. This can be readily o
 
 ![Fig. 1.0.1 - The **demos** and their place in the repo ](./images/GIT_2_inventory_intro.png)
 
-The python scrips in this folder are meant also to verify that
+The python scripts in this folder are meant also to verify that
 Installation and Setup](#installation-and-setup) was successfully completed.
 
 * try_me = almost certainly the very first script to try; running it should also produce 
