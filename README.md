@@ -234,11 +234,22 @@ An juxtaposition of connectionist learning against classical Principal Component
 ---   
 
 ### 🔴 Level 4: Architectural Optimization (`/da_Pretrained_Iris`)
-*Frugality: The 15-Parameter Challenge*
+*Frugality: The min-parameter-count Challenge*
+
+**Objective:** Demonstrate that informed initialization based on statistical priors significantly reduces the training overhead and parameter count.
+
+**Evolution:**
+  from the **Baseline** 151 parameters - illustrated in the `/da_Visual_Iris` section above;
+
+* **Optimized MLP ** 36 [actually just the 12 output] parameters (4-3-3-3), utilizing fixed PCA and FLD weights in the hidden layers.
+<br>
+Performance: **97.34%** accuracy by training solely the output mapping layer.
 
 ![Setosa Refined 2](./images/visual_iris/Setosa_Refined_2.png) 
 ![Versicolor Refined 2](./images/visual_iris/Versicolor_Refined_2.png) 
 ![Virginica Refined 2](./images/visual_iris/Virginica_Refined_2.png)
+
+* The **Tiny LDA** - just 15 parameters and a single model layer!
 
 ![LDA 3 classes --> 2D](./images/LDA_01.png)
 
@@ -268,15 +279,8 @@ A pretrained NN model fully determined by mathematically precise methods and gen
 
 This part demonstrates the reduction of model complexity through informed architectural design.
 
-* **Action:** Run `python extreme_optimizer.py`.
-* **Objective:** Demonstrate that informed initialization based on statistical priors significantly reduces the training overhead and parameter count.
-
-* **Key Finding:** 
-  The **Architectural Evolution:**
-  - 1. **Baseline:** 151 parameters.
-  - 2. **Compressed:** 48 parameters (4-4-3-3).
-  - 3. **Optimized:** 36 [actually 12] parameters (4-3-3-3), utilizing fixed PCA/FLD weights.
-* **Structural Observation:** The 12-Parameter Performance: Achieving **97.34% accuracy** by training solely the output mapping layer.
+**Objective:** Demonstrate that the basline MLP model has in fact a much smaller number of 
+'active' dimensions.
 
 ![netron view of baseline MLP](./images/tensors_heatmaps/netron_baseline_MLP.png)
 
