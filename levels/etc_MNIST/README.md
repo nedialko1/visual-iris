@@ -32,7 +32,7 @@ Working hard to not be accused of blasphemy and profanation of such a landmark A
 
  and a "9" vs "4" ...  
 
-![MNIST CNN "4" or "9"](../../images/Appendix_1/LDA_4_or_9.png)
+![MNIST LDA "4" or "9"](../../images/Appendix_1/LDA_4_or_9.png)
 
 Importantly what would a **truly intelligent** human observer conclude about these images.
 It would likely be something like:
