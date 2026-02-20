@@ -78,7 +78,7 @@ the originally gray-scale digit samples images
 **lda_synergy.py** = Explores the pre-training of the CNN model using a zero-training PCA-LDA pipeline to provide filter kernels for the convolutional layer
 <br>
 
-Foremost, a side effect from running the latter script is the visual 2D representation of the PCA-LDA weights for each individual digit class in the data-set. A number of interesting observations arize from such visual. 
+Foremost, a side effect from running the latter script is the visual 2D representation of the PCA-LDA weights for each individual digit class in the data-set. A number of interesting observations arise from such visual. 
 
 ![MNIST digit classes LDA weight-spaces](../../images/Appendix_1/MNIST_LDA_2D_weights.png)
 
