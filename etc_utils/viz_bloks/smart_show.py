@@ -36,7 +36,7 @@ def smart_show(fgSaveFigures=False, selectedFigures=None, outFileNames=None):
         filename = script_dir / relative_subfolder_path
 
         # Using 300 DPI for "best resolution possible" as requested
-        fig.savefig(f"{filename}.png", dpi=300, bbox_inches='tight')
+        fig.savefig(f"{filename}.png", dpi=300)   # , bbox_inches='tight'
         print(f"Saved: {filename}.png")
 
     # Case A: Dictionary provided {fignum: filename}

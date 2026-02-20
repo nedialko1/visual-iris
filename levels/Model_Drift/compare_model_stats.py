@@ -92,7 +92,7 @@ def generate_hinton_drift(save_path, states_v0, states_v1, global_drift_val=0.0)
     # Use the absolute maximum across the WHOLE model for the color limits
     v_limit = max(np.max(np.abs(d)) for d in all_deltas)
 
-    fig.suptitle("Model Drift", fontsize=14, fontweight='bold', y=0.98)
+    fig.suptitle("Model Parameters Change", fontsize=14, fontweight='bold', y=0.98)
     plt.title(f"Scale: $\pm${v_limit:.3f} | Total Drift (L2 norm): {global_drift_val:.4f}", y=1.05)
     plt.axis('off')
 
@@ -146,7 +146,7 @@ def generate_architecture_heatmap(save_path, states_v0, states_v1, global_drift_
     fig = plt.figure(figsize=(14, 11), facecolor='white')
     gs = fig.add_gridspec(3, 2, width_ratios=[5, 0.4], wspace=0.1, hspace=0.4)
 
-    fig.suptitle("Model Drift Heatmap", fontsize=14, fontweight='bold', y=0.98)
+    fig.suptitle(f"Parameter $\Delta$ Heatmap", fontsize=14, fontweight='bold', y=0.98)
 
     for i, layer in enumerate(layers):
         dw = (states_v1[f'{layer}.weight'] - states_v0[f'{layer}.weight']).numpy()
@@ -206,7 +206,7 @@ def generate_drift_plot(save_path, stats_data):
     plt.axvline(x=100, color='red', linestyle='--', label='100% (Baseline Magnitude)')
     
     plt.xlabel('Percentage Change (%)', fontsize=12, fontweight='bold')
-    plt.title('Model Weight Drift by Layer', fontsize=14, fontweight='bold', pad=20)
+    plt.title('Model Parameters Change by Layer', fontsize=14, fontweight='bold', pad=20)
     plt.legend()
     plt.grid(axis='x', linestyle=':', alpha=0.6)
 
@@ -244,7 +244,7 @@ def generate_delta_heatmap(key, tensor_diff, save_dir="../../images/tensors_heat
     im = plt.imshow(data, cmap='YlOrRd', aspect='auto')
     plt.colorbar(im, label=f"Abs $\Delta$")
 
-    plt.title(f"Model Drift {key}")
+    plt.title(f"Abs $\Delta$ {key}", fontsize=15)
 
     """
     tensor_suffix = "bias"

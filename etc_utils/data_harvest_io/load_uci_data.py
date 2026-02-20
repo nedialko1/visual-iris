@@ -43,9 +43,13 @@ def plot_input_data(X, yClass, fgErrors=False, fignum=1):
         axes = plt.gcf().get_axes()
         plot_class_errors(plot_data, axes)
     else:
-        fig, axes = plt.subplots(1, 2, num=fignum, figsize=(14, 6))
+        fig = plt.figure(num=fignum, figsize=(17, 8), facecolor='white')
+        gs = fig.add_gridspec(1, 2,
+                              width_ratios=[1, 1], left=0.1, top=0.9, wspace=0.2, hspace=0.1)
+        axes = gs.subplots()
+        # fig, axes = plt.subplots(1, 2, num=fignum, figsize=(14, 6))
+
         plot_all_input_data(plot_data, axes)
-        plt.tight_layout()
 
     return fignum        
 
@@ -63,22 +67,29 @@ def plot_class_errors(plot_data, axes):
         style="variety", s=markerSize, markers=markers, ax=ax2 )
     ax2.set_title("Petal Dimensions")
 
+def set_stubborn_fontsize(ax1, fontsize=12):
+    ax1.set_xlabel(ax1.get_xlabel(), fontsize=fontsize)
+    ax1.set_ylabel(ax1.get_ylabel(), fontsize=fontsize)
 
 def plot_all_input_data(plot_data, axes):
-    ax1, ax2 = axes    
+    ax1, ax2 = axes
 
     custom_palette = {'Setosa':'b', 'Versicolor':'c', 'Virginica':'g'}
 
     markerSize = 100
 
-    sns.scatterplot(data=plot_data, x='sepal.length', y='sepal.width', hue='variety',  \
-        palette=custom_palette, style="variety", s=markerSize, markers=markers, ax=ax1 )
+    ## sns.set_theme(rc={'axes.labelsize': 14})
+    ## sns.set_theme(font_scale=1.5)
+    sns.scatterplot(data=plot_data, x='sepal.length', y='sepal.width', hue='variety',
+        palette=custom_palette, style="variety", s=markerSize, markers=markers, ax=ax1)
     ax1.set_title("Sepal Dimensions")
+    ## ax1.set_xlabel(fontsize=20)
+    set_stubborn_fontsize(ax1, fontsize=14)
 
-    sns.scatterplot(data=plot_data, x='petal.length', y='petal.width', hue='variety', \
-        palette=custom_palette, style="variety", s=markerSize, markers=markers, ax=ax2 )
+    sns.scatterplot(data=plot_data, x='petal.length', y='petal.width', hue='variety',
+        palette=custom_palette, style="variety", s=markerSize, markers=markers, ax=ax2)
     ax2.set_title("Petal Dimensions")
-    
+    set_stubborn_fontsize(ax2, fontsize=14)
 
 def get_data(fileName=FILE_NAME):
     print(f"*** the Current Working Directory is: \n {Path.cwd()}")

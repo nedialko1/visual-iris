@@ -26,6 +26,10 @@ from etc_utils.viz_bloks import smart_show
 
 from levels.start_here.test_run import *
 
+# Seed 42 for reproducibility
+from levels.etc_MNIST.seed_models import set_seed
+set_seed(42)
+
 # ==============================
 def try_me():
 
@@ -49,9 +53,15 @@ def try_me():
 	#3. Right away test run the baseline iris-flowers classifier with its random weights:
 	correct, total, y_pred = test_run(model, X_test, y_test, showErrors=False)
 	print(f'We got {correct} RIGHT, out of {total}!')
-	
+
+	import matplotlib.pyplot as plt
+
 	iiError = np.where(y_pred.numpy() != y_test.numpy())[0]
 	load_uci_data.plot_input_data(X_test[iiError], y_pred[iiError], fgErrors=True, fignum=fignum )
+
+	plt.suptitle( f"Untrained Baseline MLP: Accuracy {100*correct/total:.2f}% ({correct} of {total})",
+				  fontsize=16, y=0.98)
+	# print(f"{plt.rcParams.keys()}")
 
 	smart_show.smart_show(fgSaveFigures=True,
 						  selectedFigures={1: "baseline_MLP_UN_trained_performance"})

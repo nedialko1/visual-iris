@@ -32,10 +32,14 @@ for iFig in range(2):
 
     # Subplot 1: Scatter with variety
     plt.subplot(1, 1, 1)
+    ax = plt.gca()
 
     x1=X_pca[:, 0]
+    num_pts = x1.size
+
     xx=np.unique(x1)
     nx1 = xx.size
+
     print(f"{iFig}: nx1 = {nx1}")
     xL = np.min(xx)
     xR = np.max(xx)
@@ -49,7 +53,42 @@ for iFig in range(2):
     ny2 = yy.size
     ny2 = 2*ny2
     yy = np.linspace(yL, yR, ny2 )
-    sns.scatterplot(x=x1, y=y2, hue=y, style=y, palette='gist_rainbow', s=100)
+
+    # ---------------------------------------------------
+    # Ouf! What a rocket science complexity just to get a scatter legend right!
+
+    sns.scatterplot(x=x1, y=y2, hue=y, style=y_labels, palette='gist_rainbow', s=100,
+                    ax=ax, legend='full')
+
+    num_hue = np.unique(y).size
+
+    h, l = ax.get_legend_handles_labels()  # Gets all handles (hue + style)
+
+    hue_colors = [handle.get_markerfacecolor() for handle in h[1:num_hue+1]]
+
+    # Map labels to their respective facecolors
+    color_map = {label: handle.get_markerfacecolor()
+                 for handle, label in zip(h[1:num_hue+1], l[1:num_hue+1])}
+    num_hue_levels = num_hue + 1
+
+    style_handles = h[num_hue_levels:]
+    style_labels = l[num_hue_levels:]
+
+    # You must know which color belongs to which style label
+    i = -1
+    for handle, label in zip(style_handles, style_labels):
+        # Example: If 'label' exists in your color_map, apply it
+        if label in color_map:
+            handle.set_color(color_map[label])
+        elif i>-1:
+            print(f"*** {i}: {hue_colors[i]}")
+            handle.set_markerfacecolor(hue_colors[i])
+        i = i + 1
+
+    # Create the legend using only hue handles
+    ax.legend(style_handles, style_labels)
+
+    # ---------------------------------------------------
 
     lines_info = HW.W2.shape
     m = lines_info[0]

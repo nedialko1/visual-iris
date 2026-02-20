@@ -8,14 +8,15 @@ from sklearn.decomposition import PCA
 seed = 42
 np.random.seed(seed)
 
-from sklearn.preprocessing import StandardScaler
-
-# --- Setup Data ---
-iris = load_iris()
-X, y = iris.data, iris.target
-X_std = StandardScaler().fit_transform(X)
-pca = PCA(n_components=3)
-X_pca = pca.fit_transform(X_std)
+# Function to create a surface for the plane Ax + By + Cz + D = 0
+# Simplified to z = -(Ax + By + D)/C
+def plot_plane(ax, w, b, color, alpha=0.3):
+    xlim = ax.get_xlim()
+    ylim = ax.get_ylim()
+    xx, yy = np.meshgrid(np.linspace(xlim[0], xlim[1], 10), np.linspace(ylim[0], ylim[1], 10))
+    # w[0]x + w[1]y + w[2]z + b = 0  => z = (-w[0]x - w[1]y - b) / w[2]
+    zz = (-w[0] * xx - w[1] * yy - b) / w[2]
+    ax.plot_surface(xx, yy, zz, color=color, alpha=alpha, shade=False)
 
 # --- Compute Fisher Planes ---
 def get_plane(X_p, y_p, c1, c2):
@@ -25,8 +26,62 @@ def get_plane(X_p, y_p, c1, c2):
     w = np.linalg.solve(sw, (m1 - m2))
     return w, -0.5 * np.dot(w, (m1 + m2))
 
+from sklearn.preprocessing import StandardScaler
+
+# --- Setup Data ---
+iris = load_iris()
+X, y = iris.data, iris.target
+X_std = StandardScaler().fit_transform(X)
+pca = PCA(n_components=3)
+X_pca = pca.fit_transform(X_std)
+
 w_set, b_set = get_plane(X_pca, y, [0], [1, 2]) # Setosa vs Others
 w_vv, b_vv   = get_plane(X_pca, y, [1], [2])    # Versicolor vs Virginica
+
+from etc_utils.viz_bloks import smart_show
+
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(11, 10))
+# Subplot 1: Scatter with variety
+plt.subplot(1, 1, 1, projection='3d')
+ax = plt.gca()
+
+x1=X_pca[:, 0]
+y2=X_pca[:, 1]
+z3=X_pca[:, 2]
+
+ax.set_xlim(np.min(x1), np.max(x1))
+ax.set_ylim(np.min(y2), np.max(y2))
+
+# Using the w, b values from our previous successful run
+# (Assuming w_set, b_set and w_vv, b_vv are defined)
+# plot_plane(ax, w_set, b_set, 'cyan')   # Setosa Boundary
+plot_plane(ax, w_vv, b_vv, 'gray')  # V-V Boundary
+
+species = ['Setosa', 'Versicolor', 'Virginica']
+colors=['r', 'g', 'b']
+styles=['o', 'x', 's']
+
+yy=np.unique(y)
+
+for i, y_class in enumerate(yy):
+    # Filter your data for just this category
+    mask = (y == y_class)
+    ax.scatter(x1[mask], y2[mask], z3[mask], s=100,
+        color=colors[i], marker=styles[i], label=species[i])
+
+ax.legend()
+ax.view_init(elev=25, azim=-60, roll=0)
+
+plt.title('3D PCA Projection: Variety Clusters')
+plt.xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.1%})')
+plt.ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.1%})')
+ax.set_zlabel(f'PC3 ({pca.explained_variance_ratio_[2]:.1%})')
+
+# plt.show()
+smart_show.smart_show(fgSaveFigures=True,
+                      selectedFigures={1: "pca_fld_3D"})
 
 # --- The Contraption ---
 class IrisLogicNet(nn.Module):

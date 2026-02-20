@@ -18,6 +18,10 @@ from etc_utils.viz_bloks import smart_show
 from levels.start_here.test_run import *
 from levels.start_here.train_me import *
 
+# Seed 42 for reproducibility
+from levels.etc_MNIST.seed_models import set_seed
+set_seed(42)
+
 # ==============================
 def test_me():
 
@@ -64,6 +68,10 @@ def test_me():
 
 	iiError = np.where(y_pred.numpy() != y_test.numpy())[0]
 	load_uci_data.plot_input_data(X_test[iiError], y_pred[iiError], fgErrors=True, fignum=fignum)
+
+	plt.figure(fignum)
+	plt.suptitle( f"Untrained Baseline MLP: Accuracy {100*correct/total:.2f}% ({correct} of {total})",
+				  fontsize=16, y=0.98)
 
 	layers_dict = model.state_dict()
 	save_model_params.save_model_params(model_name="Baseline_MLP_trained",
