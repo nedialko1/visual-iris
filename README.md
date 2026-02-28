@@ -13,6 +13,8 @@
 ## Project Overview
 
 This little project provides the companion set of python codes of an article on explainable AI (XAI).
+https://medium.com/@nedialko.krouchev/frugal-explainable-ai-ml-model-optimization-e31eb313823e
+
 This codes target eye-centric didactic purposes with visually enriched user experience being the topmost priority.
 
 > *Here a rather famous dataset is used inside a glass-box full of hands-on labs toward a visual introduction to the mechanics of machine learning (ML). 
@@ -30,6 +32,7 @@ Structural optimization is at the intersection of mathematical clarity and compu
 
 * For more insights and depth, refer to the companion article: **Frugal Explainable AI/ML Model Optimization
 a Hands-On Introduction**
+https://medium.com/@nedialko.krouchev/frugal-explainable-ai-ml-model-optimization-e31eb313823e
 
 ---
 
